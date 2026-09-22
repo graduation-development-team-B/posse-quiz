@@ -1,0 +1,1348 @@
+{
+  "pbtResults": {
+    "3.3 Property 1: 受理カタログが全契約制約を満たすことを検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787609690336
+    },
+    "5.3 Property 16: ProgressSnapshot JSON round-trip を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787609758002
+    },
+    "3.4 Property 8: Question_Format payload の正解一意性を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787609704133
+    },
+    "5.5 Property 12: Streak遷移の上限・リセットを検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787610158107
+    },
+    "5.6 Property 13: 正答率集計の境界を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787610115296
+    },
+    "5.8 Property 14: Review Queue 更新の冪等性と上限を検証する": {
+      "status": "passed",
+      "failingExample": "",
+      "lastRunTimestamp": 1787610286864
+    },
+    "6.3 Property 7: 問題数設定の正規化と不足時全件採用を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787610570862
+    },
+    "6.6 Property 10: 自由入力の trim 後大文字小文字区別完全一致を検証する": {
+      "status": "failed",
+      "failingExample": "Property failed after 1 tests; Counterexample: [\"漢\"]; input was 65 full-width spaces followed by \"漢\", normalizeFreeText(input) was \"漢\", but judgeAnswer(...).isCorrect was true (expected false).",
+      "lastRunTimestamp": 1787610625736
+    },
+    "6.2 Property 6: 出題範囲とセッションの一意性を検証する": {
+      "status": "passed",
+      "failingExample": "",
+      "lastRunTimestamp": 1787611032202
+    },
+    "4.5 Property 4: 新版の原子的切替を検証する": {
+      "status": "failed",
+      "failingExample": "fast-check counterexample after 1 test (seed -584711583, path 0:0:0:0:0:0:0:0): scenario=\"staging-write-failure\", oldResponse.contentVersion=\"content-1\", nextResponse.contentVersion=\"content-1-next\"; expected manager state \"using-cache\" but received \"ready\".",
+      "lastRunTimestamp": 1787611963011
+    },
+    "4.4 Property 3: 同一 contentVersion の再保存・再切替回避を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787611965204
+    },
+    "4.3 Property 2: 不正レスポンスの全体拒否と fallback を検証する": {
+      "status": "failed",
+      "failingExample": "fast-check seed 2131041578, path 1:0:0:0:0:0:0:0; minimized scenario had fallbackResponse contentVersion content-1, no cache, invalid response with questionId question-week3-1-1-0 and an unknown topicId; assertion expected captured validation log to contain that ID but captured calls were empty. Vitest also reported an unhandled rejection from the background startup refresh.",
+      "lastRunTimestamp": 1787611879609
+    },
+    "4.6 Property 17: version更新と SyncState の失敗時データ保持を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787612045366
+    },
+    "6.10 Property 11: Feedback用語リンクの最初の一致だけを検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787612324853
+    },
+    "6.8 Property 9: 選択肢順序のSession内安定性を検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787612327521
+    },
+    "6.4 Property 5: API更新中も開始時Sessionを固定することを検証する": {
+      "status": "passed",
+      "lastRunTimestamp": 1787612452147
+    },
+    "6.11 Property 15: 復習Sessionの優先順と設定数を検証する": {
+      "status": "passed",
+      "failingExample": "",
+      "lastRunTimestamp": 1787612919391
+    }
+  },
+  "executionHistory": {
+    "1.1 TypeScript のドメイン型と定数を定義する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606769961
+      },
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606784954
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787639750699
+      }
+    ],
+    "1.2 実行環境設定とプラットフォーム別ストレージ境界を作る": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770023
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787607738918
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608172037
+      }
+    ],
+    "1.3 Vitest、fast-check、React Native 向けテストの実行設定を追加する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770100
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787607744488
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608178465
+      }
+    ],
+    "2. Content_API のデモバックエンドと REST/JSON 契約を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770214
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638605305
+      }
+    ],
+    "2.1 デモ用 Content_API のレスポンス型、エンドポイント、HTTP応答を作る": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770255
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608192129
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608808858
+      }
+    ],
+    "2.2 week3〜week6 の初期教材カタログを作成する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770289
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608198200
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608817142
+      }
+    ],
+    "3.1 ContentApiClient と timeout / HTTP / JSON / Content-Type 処理を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770330
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608842066
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609408056
+      }
+    ],
+    "3.2 activeデータ、stable ID、参照関係、数量、形式 payload の全体バリデータを実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770367
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608850067
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609417154
+      }
+    ],
+    "3.3 Property 1: 受理カタログが全契約制約を満たすことを検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770452
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609463199
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609879569
+      }
+    ],
+    "3.4 Property 8: Question_Format payload の正解一意性を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770549
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609471724
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609888982
+      }
+    ],
+    "3.5 全体拒否、問題IDログ、公開/削除フィルタの単体テストを作る": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770631
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609480596
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609899075
+      }
+    ],
+    "4.1 ContentCacheStore の版別保存、current pointer、原子的切替を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770712
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609489507
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609909587
+      }
+    ],
+    "4.2 ContentSyncManager の起動、更新、同一版判定、SyncState 遷移を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770762
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610378116
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611096285
+      }
+    ],
+    "4.3 Property 2: 不正レスポンスの全体拒否と fallback を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770799
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611671035
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612115471
+      }
+    ],
+    "4.4 Property 3: 同一 contentVersion の再保存・再切替回避を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770846
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611683213
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612125539
+      }
+    ],
+    "4.5 Property 4: 新版の原子的切替を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770935
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611694572
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612135956
+      }
+    ],
+    "4.6 Property 17: version更新と SyncState の失敗時データ保持を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606770969
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611705683
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612147345
+      }
+    ],
+    "5.1 ProgressStore の初期化、復元、回答記録、保存失敗、削除確認を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771018
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608204320
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608825505
+      }
+    ],
+    "5.2 Progress_Snapshot の決定的 JSON serialize / deserialize を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771064
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608858135
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609426099
+      }
+    ],
+    "5.3 Property 16: ProgressSnapshot JSON round-trip を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771100
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609498796
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609920032
+      }
+    ],
+    "5.4 Streak と正答率の集計を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771133
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608866280
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609435648
+      }
+    ],
+    "5.5 Property 12: Streak遷移の上限・リセットを検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771168
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609939388
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610329852
+      }
+    ],
+    "5.6 Property 13: 正答率集計の境界を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771218
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609948416
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610339220
+      }
+    ],
+    "5.7 Review Queue の追加、更新、上限、復習正解/誤答を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771256
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608874278
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609445037
+      }
+    ],
+    "5.8 Property 14: Review Queue 更新の冪等性と上限を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771294
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609958851
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610348898
+      }
+    ],
+    "6.1 出題範囲、問題数正規化、セッション生成、横断選択を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771368
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609970089
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610358993
+      }
+    ],
+    "6.2 Property 6: 出題範囲とセッションの一意性を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771410
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610388725
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611107671
+      }
+    ],
+    "6.3 Property 7: 問題数設定の正規化と不足時全件採用を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771445
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610398367
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611119492
+      }
+    ],
+    "6.4 Property 5: API更新中も開始時Sessionを固定することを検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771482
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612186532
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612538388
+      }
+    ],
+    "6.5 Answer_Judge と自由入力正規化を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771514
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610409364
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611129624
+      }
+    ],
+    "6.6 Property 10: 自由入力の trim 後大文字小文字区別完全一致を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771546
+      },
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610419496
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611338876
+      }
+    ],
+    "6.7 セッション内の選択肢順固定を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771578
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611351551
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611635527
+      }
+    ],
+    "6.8 Property 9: 選択肢順序のSession内安定性を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771617
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612197382
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612544026
+      }
+    ],
+    "6.9 Feedbackモデル、用語リンク、あいまい登録を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771667
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611718434
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612158953
+      }
+    ],
+    "6.10 Property 11: Feedback用語リンクの最初の一致だけを検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771718
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612209387
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612549360
+      }
+    ],
+    "6.11 Property 15: 復習Sessionの優先順と設定数を検証する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771767
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611362815
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787611645877
+      }
+    ],
+    "6.12 Property 7〜15に対応する判定・セッション・Feedback単体テストを補完する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771803
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612220799
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612554952
+      }
+    ],
+    "7.1 ルートレイアウトと Context / reducer を組み込む": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771841
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612561679
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613099362
+      }
+    ],
+    "7.2 日本語テーマ、ライト/ダーク切替、共通アクセシビリティ部品を作る": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771878
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612567162
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613107019
+      }
+    ],
+    "8.1 ホーム画面を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771957
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612572712
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613113628
+      }
+    ],
+    "8.2 週・横断の範囲選択画面を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606771991
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612578808
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613120386
+      }
+    ],
+    "8.3 クイズ画面を Question_Format ごとに実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772028
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613140671
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636608099
+      }
+    ],
+    "8.4 Feedback画面/状態を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772065
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636648081
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637830923
+      }
+    ],
+    "8.5 結果画面と再挑戦/復習/ホーム導線を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772102
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636657693
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637844053
+      }
+    ],
+    "8.6 復習画面を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772135
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612584282
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613126897
+      }
+    ],
+    "8.7 用語辞書一覧、検索、用語確認セッションを実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772176
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613148038
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636618480
+      }
+    ],
+    "8.8 用語詳細画面と Feedback からの復帰を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772214
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636669757
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637854830
+      }
+    ],
+    "8.9 設定、問題数、教材再試行、学習記録削除画面を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772246
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613154888
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636627555
+      }
+    ],
+    "9.1 レスポンシブレイアウトと resize 状態保持を実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772295
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613162071
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636636041
+      }
+    ],
+    "9.2 Web manifest と Service Worker の資材キャッシュを実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772330
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636682986
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637864176
+      }
+    ],
+    "9.3 キーボード、focus、ライブリージョン、コントラストを監査・補正する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772360
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787636692678
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637873943
+      }
+    ],
+    "10.1 API、Content_Cache、ProgressStore、クイズ、辞書の統合テストを実装する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772394
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637886221
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638208169
+      }
+    ],
+    "10.2 Property-Based Test Property 1〜17 を実行し、失敗を修正する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772427
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637895682
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638217958
+      }
+    ],
+    "10.3 lint、型チェック、Web export、PWAスモーク、アクセシビリティ検証を実行する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772465
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638237582
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638562417
+      }
+    ],
+    "10.4 ホーム→範囲→クイズ→Feedback→結果→復習と辞書導線を確認する": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772501
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637904564
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638228009
+      }
+    ],
+    "11. チェックポイント - APIとドメイン基盤": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772543
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638616892
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638789630
+      }
+    ],
+    "12. チェックポイント - UIとPWA": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772581
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638800648
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787639520083
+      }
+    ],
+    "13. 最終チェックポイント - 全検証": [
+      {
+        "executionId": "0bfc0fd7-74cd-4383-845b-3c9ecb057b7f",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787606772617
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787639531214
+      },
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787639703217
+      }
+    ],
+    "2.3* API契約、初期カタログ、将来週の非表示を検証する単体テストを作る": [
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787608817194
+      }
+    ],
+    "3. APIクライアントと Content_Catalog 全体バリデータを実装する": [
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787609899219
+      }
+    ],
+    "5. ProgressStore、JSON永続化、Streak、Review Queue を実装する": [
+      {
+        "executionId": "f40caaf6-6fab-4dfd-b266-5c32a169e1ec",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787610348996
+      }
+    ],
+    "4. Content_Cache、ContentSyncManager、失敗時 fallback を実装する": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612147483
+      }
+    ],
+    "6. クイズの純粋ロジック、判定、セッション固定を実装する": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787612555028
+      }
+    ],
+    "7. アプリ状態、Router、共通テーマ、同期/進捗接続を配線する": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787613107065
+      }
+    ],
+    "8. 範囲選択、クイズ、Feedback、結果、復習、辞書のUIを実装する": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637854919
+      }
+    ],
+    "9. レスポンシブ、PWA Shell、Service Worker、アクセシビリティを仕上げる": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787637873988
+      }
+    ],
+    "10. 統合検証、ビルド、主要導線の自動スモークを完了する": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787638562495
+      }
+    ],
+    "1. 基盤、型、設定、テスト実行環境を整備する": [
+      {
+        "executionId": "3072529a-0094-4aa8-9d49-c7b05515d8d7",
+        "chatSessionId": "sess_b285ecd8-d3cc-4578-b5da-8f76732e3aaf",
+        "timestamp": 1787639751051
+      }
+    ],
+    "14.1 共通サーフェス、白カード、角丸、CTA、状態ラベル、テーマトークンを整備する": [
+      {
+        "executionId": "85698712-cdbc-4636-a7a5-f70f9c7e5704",
+        "chatSessionId": "sess_54864bfc-55c8-4966-9ba5-0ebed8a40861",
+        "timestamp": 1787644594486
+      },
+      {
+        "executionId": "85698712-cdbc-4636-a7a5-f70f9c7e5704",
+        "chatSessionId": "sess_54864bfc-55c8-4966-9ba5-0ebed8a40861",
+        "timestamp": 1787644861370
+      }
+    ],
+    "14. 主要学習ループの共通UI基盤を実装する": [
+      {
+        "executionId": "85698712-cdbc-4636-a7a5-f70f9c7e5704",
+        "chatSessionId": "sess_54864bfc-55c8-4966-9ba5-0ebed8a40861",
+        "timestamp": 1787644861575
+      }
+    ],
+    "15.1 ホームを今日の一歩、続きから、教材探索、Weekカード構成へ更新する": [
+      {
+        "executionId": "a046beef-ca7d-486c-b106-0350a1ccf685",
+        "chatSessionId": "sess_22d8d008-8fb5-4aa9-9575-395a2980c742",
+        "timestamp": 1787645145064
+      },
+      {
+        "executionId": "a046beef-ca7d-486c-b106-0350a1ccf685",
+        "chatSessionId": "sess_22d8d008-8fb5-4aa9-9575-395a2980c742",
+        "timestamp": 1787645641305
+      }
+    ],
+    "15. ホーム画面のPOSSE向け教材探索UIを実装する": [
+      {
+        "executionId": "a046beef-ca7d-486c-b106-0350a1ccf685",
+        "chatSessionId": "sess_22d8d008-8fb5-4aa9-9575-395a2980c742",
+        "timestamp": 1787645641799
+      }
+    ],
+    "16.1 scope画面を範囲チップ、件数、問題数、固定開始CTAの構成へ更新する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645773674
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645876746
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646380211
+      }
+    ],
+    "17.1 クイズのヘッダー、進捗、問題カード、全幅選択肢、形式別入力を実装する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645773797
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645882999
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646387652
+      }
+    ],
+    "18.1 Feedbackの判定状態、解説、出典、誤答理由、復習CTA、次へを再構成する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645773842
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645889972
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646395249
+      }
+    ],
+    "19.1 結果の完了ヘッダー、主指標/補助指標、再挑戦/復習/ホーム導線を実装する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645773909
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646410354
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646621740
+      }
+    ],
+    "20.1 主要学習ループのVisual Contractテストを作成する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645773987
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646629697
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787647237124
+      }
+    ],
+    "20.2 主要学習ループのUI Smoke導線テストを作成する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645774060
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787647245190
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787647726454
+      }
+    ],
+    "20.3 UIリファインメントの型・Lint・単発テストスクリプトを整備する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645774122
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787647734420
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787647884207
+      }
+    ],
+    "16. 学習設定（scope）のボトムシート風UIを実装する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645826867
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646380338
+      }
+    ],
+    "17. クイズ画面を没入型の1問1カードUIへ更新する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645833080
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646387741
+      }
+    ],
+    "18. Feedback画面を正誤分離と復習導線中心に更新する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645839046
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646395315
+      }
+    ],
+    "19. 結果画面を完了称賛と次行動のUIへ更新する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645845027
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787646621971
+      }
+    ],
+    "20. 5画面のVisual Contractと自動Smoke検証を追加する": [
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787645851885
+      },
+      {
+        "executionId": "1738d38e-2489-45de-a395-0ca16f82945f",
+        "chatSessionId": "sess_d95f6eb7-5766-43c8-85d1-1fe2f04a640a",
+        "timestamp": 1787647884285
+      }
+    ]
+  }
+}
