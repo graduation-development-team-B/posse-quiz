@@ -15,10 +15,16 @@ export default function AccountScreen() {
         <ThemedText type="title">マイページ</ThemedText>
         <ThemedText style={styles.description}>POSSE Quizの学習環境を整えます。</ThemedText>
         <ThemedView variant="surface" style={styles.card}>
-          <ThemedText type="subtitle">学習設定</ThemedText>
-          <ThemedText style={styles.description}>問題数、教材の再取得、端末内の学習記録を管理できます。</ThemedText>
-          <AccessibleButton label="設定を開く" onPress={() => router.push('/settings')} style={styles.cta} variant="secondary" />
-        </ThemedView>
+        <ThemedText type="subtitle">学習設定</ThemedText>
+        <ThemedText style={styles.description}>問題数、教材の再取得、端末内の学習記録を管理できます。</ThemedText>
+        <AccessibleButton label="設定を開く" onPress={() => router.push('/settings')} style={styles.cta} variant="secondary" />
+      </ThemedView>
+      <ThemedView variant="surface" style={styles.card}>
+        <ThemedText type="subtitle">アカウント</ThemedText>
+        <ThemedText style={styles.description}>ログインすると、学習状況を引き継いで利用できます。</ThemedText>
+        <AccessibleButton label="ログイン画面を開く" onPress={() => router.push('/login')} style={styles.cta} />
+        <AccessibleButton label="新規登録画面を開く" onPress={() => router.push('/signup')} style={styles.cta} variant="secondary" />
+      </ThemedView>
       </ResponsiveScrollView>
     </ThemedView>
   );

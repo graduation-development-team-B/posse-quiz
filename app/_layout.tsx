@@ -37,6 +37,8 @@ export default function RootLayout() {
       <AppProviders>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+          <Stack.Screen name="signup" options={{ headerShown: false }} />
           <Stack.Screen name="roadmap" options={{ headerShown: false }} />
           <Stack.Screen name="scope/index" options={{ headerShown: false }} />
           <Stack.Screen name="drill/[drillId]" options={{ headerShown: false }} />
