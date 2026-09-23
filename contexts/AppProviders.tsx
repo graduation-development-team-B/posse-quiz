@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { AuthProvider } from './AuthContext';
 import { ContentProvider } from './ContentContext';
 import { ProgressProvider } from './ProgressContext';
 import { QuizSessionProvider } from './QuizSessionContext';
@@ -11,12 +12,14 @@ import { SettingsProvider } from './SettingsContext';
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
-    <SettingsProvider>
-      <ProgressProvider>
-        <ContentProvider>
-          <QuizSessionProvider>{children}</QuizSessionProvider>
-        </ContentProvider>
-      </ProgressProvider>
-    </SettingsProvider>
+    <AuthProvider>
+      <SettingsProvider>
+        <ProgressProvider>
+          <ContentProvider>
+            <QuizSessionProvider>{children}</QuizSessionProvider>
+          </ContentProvider>
+        </ProgressProvider>
+      </SettingsProvider>
+    </AuthProvider>
   );
 }

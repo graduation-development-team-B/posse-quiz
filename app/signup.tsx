@@ -14,16 +14,21 @@ import { Mascot } from '@/components/game/Mascot';
 import { ResponsiveContainer } from '@/components/layout';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { useAuth } from '@/contexts/AuthContext';
 import { useThemeColor } from '@/hooks/use-theme-color';
 
 /** メールアドレスとパスワードを入力する新規登録画面。登録処理は次の段階で接続する。 */
 export default function SignupScreen() {
   const router = useRouter();
+  const { signUp } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [hasError, setHasError] = useState(false);
 
   const textColor = useThemeColor({}, 'text');
   const mutedTextColor = useThemeColor({}, 'textSecondary');
@@ -31,6 +36,44 @@ export default function SignupScreen() {
   const surfaceColor = useThemeColor({}, 'surface');
   const primaryColor = useThemeColor({}, 'primary');
   const pageColor = useThemeColor({}, 'pageSurface');
+
+  async function handleSignup() {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail || !password || !passwordConfirmation) {
+      setHasError(true);
+      setMessage('メールアドレスとパスワードをすべて入力してください。');
+      return;
+    }
+    if (password.length < 8) {
+      setHasError(true);
+      setMessage('パスワードは8文字以上で入力してください。');
+      return;
+    }
+    if (password !== passwordConfirmation) {
+      setHasError(true);
+      setMessage('パスワードが一致していません。');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage('');
+    const { session, error } = await signUp(normalizedEmail, password);
+    setIsSubmitting(false);
+
+    if (error) {
+      setHasError(true);
+      setMessage('新規登録できませんでした。入力内容を確認してください。');
+      return;
+    }
+
+    if (session) {
+      router.replace('/(tabs)');
+      return;
+    }
+
+    setHasError(false);
+    setMessage('確認メールを送信しました。メール内のリンクから登録を完了してください。');
+  }
 
   return (
     <ThemedView colorName="pageSurface" style={styles.screen}>
@@ -101,12 +144,19 @@ export default function SignupScreen() {
 
             <AccessibleButton
               accessibilityHint="入力した情報でアカウントを作成します"
-              label="登録する"
-              onPress={() => undefined}
+              label={isSubmitting ? '登録中…' : '登録する'}
+              onPress={handleSignup}
+              disabled={isSubmitting}
               style={styles.signupButton}
             />
 
-            <ThemedText style={[styles.helperText, { color: mutedTextColor }]}>新規登録機能は現在準備中です。</ThemedText>
+            <ThemedText
+              accessibilityLiveRegion="polite"
+              colorName={hasError ? 'error' : 'success'}
+              style={styles.helperText}
+            >
+              {message || 'メールアドレスとパスワードで登録できます。'}
+            </ThemedText>
           </View>
 
           <AccessibleButton

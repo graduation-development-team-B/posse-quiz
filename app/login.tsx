@@ -14,14 +14,19 @@ import { Mascot } from '@/components/game/Mascot';
 import { ResponsiveContainer } from '@/components/layout';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { useAuth } from '@/contexts/AuthContext';
 import { useThemeColor } from '@/hooks/use-theme-color';
 
 /** メールアドレスとパスワードを入力する認証画面。認証処理は次の段階で接続する。 */
 export default function LoginScreen() {
   const router = useRouter();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [hasError, setHasError] = useState(false);
 
   const textColor = useThemeColor({}, 'text');
   const mutedTextColor = useThemeColor({}, 'textSecondary');
@@ -29,6 +34,28 @@ export default function LoginScreen() {
   const surfaceColor = useThemeColor({}, 'surface');
   const primaryColor = useThemeColor({}, 'primary');
   const pageColor = useThemeColor({}, 'pageSurface');
+
+  async function handleLogin() {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail || !password) {
+      setHasError(true);
+      setMessage('メールアドレスとパスワードを入力してください。');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setMessage('');
+    const { error } = await signIn(normalizedEmail, password);
+    setIsSubmitting(false);
+
+    if (error) {
+      setHasError(true);
+      setMessage('ログインできませんでした。入力内容を確認してください。');
+      return;
+    }
+
+    router.replace('/(tabs)');
+  }
 
   return (
     <ThemedView colorName="pageSurface" style={styles.screen}>
@@ -103,29 +130,30 @@ export default function LoginScreen() {
 
             <AccessibleButton
               accessibilityHint="入力したメールアドレスとパスワードでログインします"
-              label="ログイン"
-              onPress={() => undefined}
+              label={isSubmitting ? 'ログイン中…' : 'ログイン'}
+              onPress={handleLogin}
+              disabled={isSubmitting}
               style={styles.loginButton}
             />
 
-            <ThemedText style={[styles.helperText, { color: mutedTextColor }]}> 
-              ログイン機能は現在準備中です。
-            </ThemedText>
-          </View>
-
-          <AccessibleButton
+            {message ? (
+              <ThemedText
+                accessibilityLiveRegion="polite"
+                colorName={hasError ? 'error' : 'success'}
+                style={styles.helperText}
+              >
+                {message}
+              </ThemedText>
+            ) : null}
+            <AccessibleButton
             label="新規登録はこちら"
             onPress={() => router.push('/signup')}
             style={styles.signupLink}
             variant="ghost"
           />
+          </View>
 
-          <AccessibleButton
-            label="ログインせずに戻る"
-            onPress={() => router.back()}
-            style={styles.backButton}
-            variant="ghost"
-          />
+
         </ResponsiveContainer>
       </KeyboardAvoidingView>
     </ThemedView>
@@ -158,6 +186,5 @@ const styles = StyleSheet.create({
   visibilityText: { fontSize: 13, fontWeight: '700' },
   loginButton: { marginTop: 0, minHeight: 52 },
   helperText: { fontSize: 13, fontWeight: '600', lineHeight: 20, textAlign: 'center' },
-  backButton: { alignSelf: 'center', marginTop: 12 },
   signupLink: { alignSelf: 'center', marginTop: 2 },
 });
